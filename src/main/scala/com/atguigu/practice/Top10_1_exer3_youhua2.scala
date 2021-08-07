@@ -26,7 +26,7 @@ object Top10_1_exer3_youhua2 {
     val sparkContext = new SparkContext(new SparkConf().setMaster("local[*]").setAppName("HotCategoryTop10Analysis"))
     //1 读取数据
     var actionRDD: RDD[String] = sparkContext.textFile("input2/user_visit_action.csv")
-    //2. 包装数据为指定格式  (id,(1,0,0)) (id,(0,1,0)) (id,(0,0,1))  测试git提交
+    //2. 包装数据为指定格式  (id,(1,0,0)) (id,(0,1,0)) (id,(0,0,1)) dfdf d
     val flatRDD: RDD[(String, (Int, Int, Int))] = actionRDD.flatMap(
       action => {
         val datas = action.split(",")
